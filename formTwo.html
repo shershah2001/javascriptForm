@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Two</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        *,
+        *::after,
+        *::before {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            font-size: 62.5%;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        :root {
+            --weight-one: 100;
+            --weight-two: 200;
+            --weight-three: 300;
+            --weight-four: 400;
+            --weight-five: 500;
+            --weight-six: 600;
+            --weight-seven: 700;
+            --weight-eight: 800;
+            --weight-nine: 900;
+            --weight-ten: 1000;
+        }
+
+        .second_form_section {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .firstThreeField,
+        .secondTwoField,
+        .thirdThreeField,
+        .fourthTwoField,
+        .fivethThreeField,
+        .sixthOneField {
+            margin-bottom: 1rem;
+        }
+
+        .form_field {
+            color: #9e1346;
+            font-size: 1.5rem;
+            font-weight: var(--weight-six);
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .form_field>input,
+        select {
+            height: 4.5rem;
+            outline: none;
+            padding-left: 1rem;
+            width: 100%;
+            background: #ffffff;
+            border: 2px solid;
+            border-color: #ececec;
+            color: #000000;
+            border-radius: 2px;
+        }
+
+        .form_field>input::placeholder,
+        select {
+            color: #999;
+            opacity: 1;
+            font-size: 1.3rem;
+            font-weight: 600;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        select {
+            color: #000;
+        }
+
+        label {
+            margin-bottom: 1rem;
+        }
+
+        /* first Three field section start here  */
+        .firstThreeField {
+            display: flex;
+            column-gap: 3rem;
+        }
+
+        /* first Three field section end here  */
+
+        /* second two field start here */
+        .secondTwoField {
+            display: flex;
+            column-gap: 3rem;
+        }
+
+        .number {
+            flex: 26%;
+        }
+
+        .address {
+            flex: 60%;
+        }
+
+        /* second two field end here  */
+        /* third three field start here */
+        .thirdThreeField {
+            display: flex;
+            column-gap: 3rem;
+        }
+
+        /* third three field end here */
+        /* fourth two field start here */
+        .fourthTwoField {
+            display: flex;
+            column-gap: 3rem;
+        }
+
+        /* fourth two field end here  */
+        /* fiveth three field start here */
+        .fivethThreeField {
+            display: flex;
+            column-gap: 3rem;
+        }
+
+        .fivethThreeField .form_field input:nth-of-type(1),
+        .fivethThreeField .form_field input:nth-of-type(2) {
+            height: 4.5rem;
+            outline: none;
+            padding-left: 0.5rem;
+            width: 100%;
+            background: #ffffff;
+            border: 2px solid;
+            border-color: #ececec;
+            color: #000000;
+            border-radius: 2px;
+            line-height: 4.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        /* fiveth three field end here */
+        /* sixth field start here */
+        .sixthOneField {
+            width: 31.5%;
+        }
+
+        /* sixth field end here */
+        /* submit button start here */
+        .submit_button {
+            display: grid;
+            place-content: center;
+
+        }
+
+        .submit_button button {
+            background-color: #fdb23e;
+            color: #5d0123;
+            font-weight: 900;
+            padding: 13px 22px;
+            letter-spacing: 1px;
+            font-size: 17px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            border: 0px;
+            cursor: pointer;
+        }
+
+        /* submit button end here */
+        /* media query start here */
+        @media(min-width:330px) and (max-width:1024px) {
+
+            .firstThreeField,
+            .secondTwoField,
+            .thirdThreeField,
+            .fourthTwoField,
+            .fivethThreeField,
+            .sixthOneField {
+                display: block;
+            }
+
+            .sixthOneField {
+                width: 100%;
+            }
+
+            .sixthOneField select {
+                margin-top: 1rem;
+            }
+        }
+
+        /* media query end here */
+        /* error */
+        span{
+            font-size: 12px;
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main_form_section">
+        <div class="second_form_section">
+            <form onsubmit="handleSubmit(event)">
+                <div class="firstThreeField">
+                    <!-- first three field -->
+                    <div class="form_field first_name">
+                        <label for="firstname">First Name</label>
+                        <input type="text" name="first_name" id="firstname" placeholder="Enter First Name" value="">
+                        <span id="firstname_error"></span>
+                    </div>
+                    <div class="form_field last_name">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" name="last_name" id="lastname" placeholder="Enter Last Name" value="">
+                        <span id="lastname_error"></span>
+                    </div>
+                    <div class="form_field email">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email" placeholder="Enter a valid e-mail" value=""
+                            >
+                        <span id="email_error"></span>
+                    </div>
+                </div>
+                <!-- second three field -->
+                <div class="secondTwoField">
+                    <div class="form_field number">
+                        <label for="number">Mobile Number*</label>
+                        <input type="tel" name="number" id="number" placeholder="Enter Mobile Number" value="">
+                        <span id="number_error"></span>
+                    </div>
+                    <div class="form_field address">
+                        <label for="address">Full address of the Donor*</label>
+                        <input type="text" name="address" id="address" placeholder="Enter Address" value="">
+                        <span id="address_error"></span>
+                    </div>
+                </div>
+                <!-- third three field -->
+                <div class="thirdThreeField">
+                    <div class="form_field legalstatus">
+                        <label for="legalstatus">Legal Status of the Donor*</label>
+                        <select name="statusOfDonor" id="legalstatus">
+                            <option value="">-- Select Legal Status --</option>
+                            <option value="Individual">Individual</option>
+                            <option value="Company">Company</option>
+                            <option value="Charity">Charity</option>
+                            <option value="Partnership_Firm">Partnership Firm</option>
+                        </select>
+                        </select>
+                        <span id="legalstatus_error"></span>
+                    </div>
+                    <div class="form_field donotamout">
+                        <label for="donotamout">Contribution Amount</label>
+                        <input type="number" name="donot_amount" id="donotamount" placeholder="Enter Amount" value="">
+                        <span id="donotamount_error"></span>
+                    </div>
+                    <div class="form_field usedToward">
+                        <label for="usedToward">Contribution is to be used towards:</label>
+                        <input type="text" name="usedToward" id="usedToward"
+                            placeholder="Contribution is to be used towards" value="">
+                        <span id="usedToward_error"></span>
+                    </div>
+                </div>
+                <!-- fourth three field -->
+                <div class="fourthTwoField">
+                    <div class="form_field currency">
+                        <label for="currency">Currency</label>
+                        <input type="text" name="currency" id="currency"
+                            placeholder="Currency (US Dollars, Euros, UK Pounds, Indian Rupees, etc.)" value="">
+                        <span id="currency_error"></span>
+                    </div>
+                    <div class="form_field locatedAt">
+                        <label for="locatedAt">To be used by the ISKCON Centre/project located at</label>
+                        <input type="text" name="locatedAt" id="locatedAt" placeholder="ISKCON Delhi" value="">
+                        <span id="locatedAt_error"></span>
+                    </div>
+                </div>
+                <!-- fiveth three field  -->
+                <div class="fivethThreeField">
+
+                    <div class="form_field donor_signature">
+                        <label for="donor_signature">Signature of Donor / Authorized Signatory</label>
+                        <input type="file" name="donor_signature" id="donor_signature" placeholder="No file selected"
+                        accept=".jpg, .jpeg, .png"
+                        value=""
+                        >
+                        <span id="donor_signature_error"></span>
+                    </div>
+                    <div class="form_field Passport_Copy">
+                        <label for="Passport_Copy">Passport Copy</label>
+                        <input type="file" name="Passport_Copy" id="Passport_Copy" placeholder="No file selected"
+                        accept=".jpg, .jpeg, .png"
+                         value="">
+                        <span id="Passport_Copy_error"></span>
+                    </div>
+                    <div class="form_field preacher">
+                        <label for="preacher">Preacher (if any) </label>
+                        <select class="preacher" id="preacher" name="preacher" type="text">
+                            <option value="">Select any one</option>
+                            <option value="Ajanma Krishna Pr."> Ajanma Krishna Pr.</option>
+                            <option value="Hari Narayan Pr"> Hari Narayan Pr</option>
+                            <option value="HG Abhaya Gaur Pr"> HG Abhaya Gaur Pr</option>
+                            <option value="HG Adbhut Pr"> HG Adbhut Pr</option>
+                            <option value="HG Amrit Keshav Das Pr"> HG Amrit Keshav Das Pr</option>
+                            <option value="HG ATMA TRIPTA  DAS Pr"> HG ATMA TRIPTA DAS Pr</option>
+                            <option value="HG Bal Bhadra Pr"> HG Bal Bhadra Pr</option>
+                            <option value="HG Bandhu Kanhai Pr"> HG Bandhu Kanhai Pr</option>
+                            <option value="HG Dattatreya Bhakta Pr"> HG Dattatreya Bhakta Pr</option>
+                            <option value="HG Deen Nayak Pr"> HG Deen Nayak Pr</option>
+                            <option value="HG Dr. Radha Damodar Pr"> HG Dr. Radha Damodar Pr</option>
+                            <option value="HG Godruma Vihari Pr"> HG Godruma Vihari Pr</option>
+                            <option value="HG Guna Bhadra Pr"> HG Guna Bhadra Pr</option>
+                            <option value="HG Hare Krishna Pr"> HG Hare Krishna Pr</option>
+                            <option value="HG Hari Sunder Pr"> HG Hari Sunder Pr</option>
+                            <option value="HG Jay Mukunda Pr"> HG Jay Mukunda Pr</option>
+                            <option value="HG Jitamitra Pr"> HG Jitamitra Pr</option>
+                            <option value="HG Kavi Chandra Pr"> HG Kavi Chandra Pr</option>
+                            <option value="HG Krishna Priya Pr"> HG Krishna Priya Pr</option>
+                            <option value="HG Mahamantra Pr"> HG Mahamantra Pr</option>
+                            <option value="HG Mohan Rupa Pr"> HG Mohan Rupa Pr</option>
+                            <option value="HG Pankaj Lochan Pr"> HG Pankaj Lochan Pr</option>
+                            <option value="HG Rishi Kumar Pr"> HG Rishi Kumar Pr</option>
+                            <option value="HG Sachi Putra Pr"> HG Sachi Putra Pr</option>
+                            <option value="HG Sadhu Hirday Pr"> HG Sadhu Hirday Pr</option>
+                            <option value="HG Sahasra Netra &amp; Baldev Sakha Prji"> HG Sahasra Netra
+                                &amp; Baldev Sakha Prji</option>
+                            <option value="HG Sajjan Pr"> HG Sajjan Pr</option>
+                            <option value="HG Samba Pr"> HG Samba Pr</option>
+                            <option value="HG Sarabhuma Pr"> HG Sarabhuma Pr</option>
+                            <option value="HG Subhag Pr"> HG Subhag Pr</option>
+                            <option value="HG Vrajendra Nandan Das Pr"> HG Vrajendra Nandan Das Pr</option>
+                            <option value="Mohan Shyam Pr."> Mohan Shyam Pr.</option>
+                            <option value="N.S. Stall"> N.S. Stall</option>
+                            <option value="Online &amp; Others"> Online &amp; Others</option>
+                        </select>
+                        <span id="preacher_error"></span>
+                    </div>
+                </div>
+                <!-- sixth one field -->
+                <div class="form_field sixthOneField">
+                    <label for="cametoknow">How did you come to know about us </label>
+                    <select class="cametoknow" id="cametoknow" name="cametoknow" type="text">
+                        <option value="">Select any one</option><!---->
+                        <option value="Facebook">Facebook</option>
+                        <option value="Twitter">Twitter</option>
+                        <option value="Instagram">Instagram</option>
+                        <option value="Google">Google</option>
+                        <option value="Temple Visit">Temple Visit</option>
+                        <option value="Online &amp; Others">Online &amp; Others</option>
+                        <option value="Call From Temple">Call From Temple</option>
+                        <option value="WhatsApp Message">WhatsApp Message</option>
+                        <option value="SMS">SMS</option>
+                    </select>
+                    <span id="cametoknow_error"></span>
+                </div>
+                <!-- submit button handler start here -->
+                <div class="submit_button">
+                    <button type="submit">SUBMIT</button>
+                </div>
+                <!-- submit button  handler end here -->
+            </form>
+        </div>
+    </div>
+   <script src="./assets/js/formValidation.js"></script>
+</body>
+
+</html>
