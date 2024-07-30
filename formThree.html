@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            font-size: 62.5%;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        :root {
+            --weight-one: 100;
+            --weight-two: 200;
+            --weight-three: 300;
+            --weight-four: 400;
+            --weight-five: 500;
+            --weight-six: 600;
+            --weight-seven: 700;
+            --weight-eight: 800;
+            --weight-nine: 900;
+            --weight-ten: 1000;
+            --font-family: "Montserrat", sans-serif;
+        }
+
+        /* form heading start here */
+        .form_heading h2 {
+            display: block;
+            color: #223441;
+            font-weight: 700;
+            font-size: 32px;
+            margin: 0 0 10px !important;
+        }
+
+        .form_heading h4 {
+            color: #9e1346 !important;
+            font-size: 24px !important;
+            margin: 0 0 20px !important;
+        }
+
+        .form_heading h6 {
+            color: #223441;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .form_heading p {
+            color: #223441;
+            font-weight: normal;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* form heading end here  */
+        .main_form_section {
+            width: 80%;
+            margin: 0 auto;
+            /* background:red; */
+        }
+
+        label {
+            margin-bottom: 1rem;
+            color: #9e1346;
+            font-size: 1.5rem;
+            font-weight: var(--weight-six);
+            font-family: var(--font-family);
+            margin-top:1rem;
+        }
+
+        input,
+        select {
+            height: 4.5rem;
+            outline: none;
+            padding-left: 1rem;
+            width: 100%;
+            background: #ffffff;
+            border: 2px solid;
+            border-color: #ececec;
+            color: #000000;
+            border-radius: 2px;
+        }
+
+        select {
+            color: #000;
+        }
+
+        textarea {
+            outline: none;
+            padding-left: 1rem;
+            border: 2px solid #ececec;
+            outline: none;
+            border-radius: 0.5rem;
+        }
+
+        input::placeholder,
+        textarea::placeholder,
+        select {
+            color: #999;
+            opacity: 1;
+            font-size: 1.3rem;
+            font-weight: 600;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .firstsection,
+        .secondsection,
+        .thirdsection,
+        .fourthsection,
+        .fivethsection,
+        .seventsection,
+        .eightsection {
+            display: flex;
+            width: inherit;
+            column-gap: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .firstsection>div,
+        .secondsection>div,
+        .thirdsection>div,
+        .fourthsection>div,
+        .fivethsection>div,
+        .seventsection>div,
+        .eightsection>div {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        /* fourth section start here */
+        .fourthsection .address {
+            flex: 81%;
+        }
+
+        .fourthsection .city {
+            flex: 39%;
+        }
+
+        /* fourth section end here  */
+        /* fiveth section start here */
+        .fivethsection .preacher,
+        .fivethsection .come_to_know {
+            flex: inherit;
+        }
+
+        /* fiveth section end here  */
+        /* sixth section start here */
+        .duplicate-row {
+            display: flex;
+            column-gap: 2rem;
+            width: inherit;
+            align-items: center;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .duplicate-row>div {
+            flex: 1;
+        }
+
+        .addmoreButn {
+            background: #000;
+            display: inline-block;
+            background: #9e1346;
+            text-align: center;
+            font-weight: 600;
+            font-size: 16px;
+            color: #fff;
+            margin: 10px 0 15px;
+            border-radius: 50px;
+            border: 0;
+            font-weight: 600;
+            width: 23rem;
+            font-family: var(--font-family);
+            height: 5.5rem;
+            cursor: pointer;
+        }
+
+        /* remove button start here */
+        .btn-remove {
+            border-radius: 50%;
+            width: 5rem;
+            height: 5rem;
+            margin-top: 2rem;
+            border: none;
+            cursor: pointer;
+            background-color: #9e1346;
+            color: #fff;
+        }
+
+        /* remove button end here */
+        /* sixth section end here  */
+
+        /* sevent section start here */
+        .submitButn {
+            display: grid;
+            place-content: center;
+            margin-top:2rem;
+            margin-bottom:2rem;
+        }
+
+        .submitButn button {
+            background-color: #fdb23e;
+            color: #5d0123;
+            font-weight: 900;
+            padding: 13px 22px;
+            /* letter-spacing: 1px; */
+            font-size: 17px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            font-family: var(--font-family);
+            border: 0px;
+            cursor: pointer;
+        }
+
+        /* sevent section end here */
+        /* media query start here */
+        @media(min-width:330px) and (max-width:1024px) {
+
+            .firstsection,
+            .secondsection,
+            .thirdsection,
+            .fourthsection,
+            .fivethsection,
+            .seventsection,
+            .eightsection  {
+                display: block;
+            }
+            .duplicate-row{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                row-gap: 1rem;
+            }
+        }
+
+        /* media query end here  */
+        /* span error start here */
+         span{
+            color:red;
+            font-size:1.2rem;
+            font-family: var(--font-family);
+            font-weight: var(--weight-six);
+         }
+        /* span error end here */
+    </style>
+</head>
+
+<body>
+    <div class="main_form_section">
+        <div class="form_heading">
+            <h2>Donation for Life Patron Membership Programme</h2>
+            <h4>Donation For:</h4>
+            <h6>Donation for Life Patron Membership Programme</h6>
+            <p>Enrollment Donation of <strong>Rs. 35,555/-</strong></p>
+        </div>
+        <form onsubmit="return handleSubmit()">
+
+            <div class="firstsection">
+                <div class="first_name">
+                    <label for="firstname">Your First Name*</label>
+                    <input type="text" name="firstname" id="firstname" placeholder="Your First Name" value="">
+                    <span id="firstname_error"></span>
+                </div>
+                <div class="last_name">
+                    <label for="lastname">Your Last Name*</label>
+                    <input type="text" name="lastname" id="lastname" placeholder="Your Last Name" value="">
+                    <span id="lastname_error"></span>
+                </div>
+                <div class="date">
+                    <label for="date">Date of Birth*</label>
+                    <input type="date" name="date" id="date" value="">
+                    <span id="date_error"></span>
+                </div>
+            </div>
+            <!-- second section start here -->
+            <div class="secondsection">
+                <div class="initiatedname">
+                    <label for="initiatedname">If you have an initiated name*</label>
+                    <input type="text" name="initiatedname" id="initiatedname" placeholder="Enter Here" value="">
+                    <span id="initiatedname_error"></span>
+                </div>
+                <div class="othersname">
+                    <label for="othersname">Dedicate this donation to others name*</label>
+                    <input type="text" name="othersname" id="othersname" placeholder="Enter Here" value="">
+                    <span id="othersname_error"></span>
+                </div>
+                <div class="email">
+                    <label for="email">Your E-mail ID*</label>
+                    <input type="text" name="email" id="email" placeholder="Enter a valid e-mail" value="">
+                    <span id="email_error"></span>
+                </div>
+            </div>
+            <!-- second section end here -->
+
+            <!-- third section start here -->
+            <div class="thirdsection">
+                <div class="pannumb">
+                    <label for="pannumb">It Pan No</label>
+                    <input type="text" name="pannumb" id="pannumb" placeholder="Enter Here" value="">
+                    <span id="pannumb_error"></span>
+                </div>
+                <div class="companyname">
+                    <label for="companyname">Company Name*</label>
+                    <input type="text" name="companyname" id="companyname" placeholder="Enter Here" value="">
+                    <span id="companyname_error"></span>
+                </div>
+                <div class="number">
+                    <label for="number">Contact No*</label>
+                    <input type="text" name="number" id="number" placeholder="Enter Mobile Number" value="">
+                    <span id="number_error"></span>
+                </div>
+            </div>
+            <!-- third section end here  -->
+
+            <!-- fourth section start here -->
+            <div class="fourthsection">
+                <div class="address">
+                    <label for="address">Address*</label>
+                    <input type="text" name="address" id="address" placeholder="Enter Address" value="">
+                    <span id="address_error"></span>
+                </div>
+                <div class="city">
+                    <label for="city">City/district*</label>
+                    <input type="text" name="city" id="city" placeholder="Enter City" value="">
+                    <span id="city_error"></span>
+                </div>
+            </div>
+            <!-- fourth section end here -->
+
+            <!-- eight section start here -->
+            <div class="eightsection">
+                <div class="state">
+                    <label>State*</label>
+                    <select id="state" name="state" type="text"><!---->
+                        <option value=""> Select State </option>
+                        <option value="Andaman and Nicobar Islands"> Andaman and Nicobar Islands
+                        </option>
+                        <option value="Andhra Pradesh"> Andhra Pradesh </option>
+                        <option value="Arunachal Pradesh"> Arunachal Pradesh </option>
+                        <option value="Assam"> Assam </option>
+                        <option value="Bihar"> Bihar </option>
+                        <option value="Chandigarh"> Chandigarh </option>
+                        <option value="Chhattisgarh"> Chhattisgarh </option>
+                        <option value="Dadra and Nagar Haveli"> Dadra and Nagar Haveli </option>
+                        <option value="Daman and Diu"> Daman and Diu </option>
+                        <option value="Delhi"> Delhi </option>
+                        <option value="Goa"> Goa </option>
+                        <option value="Gujarat"> Gujarat </option>
+                        <option value="Haryana"> Haryana </option>
+                        <option value="Himachal Pradesh"> Himachal Pradesh </option>
+                        <option value="Jammu and Kashmir"> Jammu and Kashmir </option>
+                        <option value="Jharkhand"> Jharkhand </option>
+                        <option value="Karnataka"> Karnataka </option>
+                        <option value="Kerala"> Kerala </option>
+                        <option value="Lakshadweep"> Lakshadweep </option>
+                        <option value="Madhya Pradesh"> Madhya Pradesh </option>
+                        <option value="Maharashtra"> Maharashtra </option>
+                        <option value="Manipur"> Manipur </option>
+                        <option value="Meghalaya"> Meghalaya </option>
+                        <option value="Mizoram"> Mizoram </option>
+                        <option value="Nagaland"> Nagaland </option>
+                        <option value="Orissa"> Orissa </option>
+                        <option value="Pondicherry"> Pondicherry </option>
+                        <option value="Punjab"> Punjab </option>
+                        <option value="Rajasthan"> Rajasthan </option>
+                        <option value="Sikkim"> Sikkim </option>
+                        <option value="Tamil Nadu"> Tamil Nadu </option>
+                        <option value="Tripura"> Tripura </option>
+                        <option value="Uttaranchal"> Uttaranchal </option>
+                        <option value="Uttar Pradesh"> Uttar Pradesh </option>
+                        <option value="West Bengal"> West Bengal </option>
+                    </select>
+                    <span id="state_error"></span>
+                </div>
+                <div class="postalCode">
+                    <label for="pincode">Postal Code*</label>
+                    <input id="pincode" maxlength="10" minlength="3" name="pincode" placeholder="Enter Pin Code"
+                        type="text">
+                    <span id="pincode_error"></span>
+                </div>
+
+                <div class="country">
+                    <label>Country*</label>
+                    <select class="country" id="country" name="country" type="text"><!---->
+                        <option value=""> Select Country </option>
+                        <option value="India"> India </option>
+                    </select>
+                    <span id="country_error"></span>
+                </div>
+            </div>
+            <!-- eight section end here  -->
+
+            <!-- sixth section start here -->
+            <div class="sixthsection MultipleRecord">
+                <div class="col-xs-6">
+                    <div class="float-right">
+                        <input type="button" value="+ Add Family Member" class="addmoreButn" id="addmorebtn">
+                        
+                    </div>
+                </div>
+                <div class="row duplicate-row">
+
+                    <div class="Name*">
+                        <label id="namelabel">Name*</label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter Name" style="margin-top: 1rem;">
+                        <span id="name_error"></span>
+                    </div>
+
+                    <div class="Age">
+                        <label id="agelabel">Age*</label>
+                        <input type="text" name="age" id="age" class="age" placeholder="Enter Here" style="margin-top: 1rem;">
+                        <span id="age_error"></span>
+                    </div>
+
+                    <div class="Relation">
+                        <label id="relationlabel">Relation*</label>
+                        <select class="relation" id="relation" style="margin-top: 1rem;">
+                            <option value="">-- Select --</option>
+                            <option value="father"> Father </option>
+                            <option value="mother"> Mother </option>
+                            <option value="son"> Son </option>
+                            <option value="daughter"> Daughter </option>
+                        </select>
+                        <span id="relation_error"></span>
+                    </div>
+                    <button type="button" class="btn-remove">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                    <br><br>
+                    <!-- <span id="replicateform_error"></span> -->
+                </div>
+            </div>
+
+            <!-- sixth section end here  -->
+            <!-- seventh section start here -->
+            <div class="fivethsection">
+                <div class="preacher">
+                    <label for="preacher">preacher (if any)</label>
+                    <select class="preacher" id="preacher" name="preacher" type="text">
+                        <option value="">Select any one</option><!---->
+                        <option value="Ajanma Krishna Pr."> Ajanma Krishna Pr.</option>
+                        <option value="Hari Narayan Pr"> Hari Narayan Pr</option>
+                        <option value="HG Abhaya Gaur Pr"> HG Abhaya Gaur Pr</option>
+                        <option value="HG Adbhut Pr"> HG Adbhut Pr</option>
+                        <option value="HG Amrit Keshav Das Pr"> HG Amrit Keshav Das Pr</option>
+                        <option value="HG ATMA TRIPTA  DAS Pr"> HG ATMA TRIPTA DAS Pr</option>
+                        <option value="HG Bal Bhadra Pr"> HG Bal Bhadra Pr</option>
+                        <option value="HG Bandhu Kanhai Pr"> HG Bandhu Kanhai Pr</option>
+                        <option value="HG Dattatreya Bhakta Pr"> HG Dattatreya Bhakta Pr</option>
+                        <option value="HG Deen Nayak Pr"> HG Deen Nayak Pr</option>
+                        <option value="HG Dr. Radha Damodar Pr"> HG Dr. Radha Damodar Pr</option>
+                        <option value="HG Godruma Vihari Pr"> HG Godruma Vihari Pr</option>
+                        <option value="HG Guna Bhadra Pr"> HG Guna Bhadra Pr</option>
+                        <option value="HG Hare Krishna Pr"> HG Hare Krishna Pr</option>
+                        <option value="HG Hari Sunder Pr"> HG Hari Sunder Pr</option>
+                        <option value="HG Jay Mukunda Pr"> HG Jay Mukunda Pr</option>
+                        <option value="HG Jitamitra Pr"> HG Jitamitra Pr</option>
+                        <option value="HG Kavi Chandra Pr"> HG Kavi Chandra Pr</option>
+                        <option value="HG Krishna Priya Pr"> HG Krishna Priya Pr</option>
+                        <option value="HG Mahamantra Pr"> HG Mahamantra Pr</option>
+                        <option value="HG Mohan Rupa Pr"> HG Mohan Rupa Pr</option>
+                        <option value="HG Pankaj Lochan Pr"> HG Pankaj Lochan Pr</option>
+                        <option value="HG Rishi Kumar Pr"> HG Rishi Kumar Pr</option>
+                        <option value="HG Sachi Putra Pr"> HG Sachi Putra Pr</option>
+                        <option value="HG Sadhu Hirday Pr"> HG Sadhu Hirday Pr</option>
+                        <option value="HG Sahasra Netra &amp; Baldev Sakha Prji"> HG Sahasra Netra
+                            &amp; Baldev Sakha Prji</option>
+                        <option value="HG Sajjan Pr"> HG Sajjan Pr</option>
+                        <option value="HG Samba Pr"> HG Samba Pr</option>
+                        <option value="HG Sarabhuma Pr"> HG Sarabhuma Pr</option>
+                        <option value="HG Subhag Pr"> HG Subhag Pr</option>
+                        <option value="HG Vrajendra Nandan Das Pr"> HG Vrajendra Nandan Das Pr</option>
+                        <option value="Mohan Shyam Pr."> Mohan Shyam Pr.</option>
+                        <option value="N.S. Stall"> N.S. Stall</option>
+                        <option value="Online &amp; Others"> Online &amp; Others</option>
+                    </select>
+                    <span id="preacher_error"></span>
+                </div>
+                <div class="come_to_know">
+                    <label for="come_to_know">How did you come to know about us</label>
+                    <select class="cametoknow" id="cametoknow" name="cametoknow" type="text">
+                        <option value="">Select any one</option><!---->
+                        <option value="Facebook">Facebook</option>
+                        <option value="Twitter">Twitter</option>
+                        <option value="Instagram">Instagram</option>
+                        <option value="Google">Google</option>
+                        <option value="Temple Visit">Temple Visit</option>
+                        <option value="Online &amp; Others">Online &amp; Others</option>
+                        <option value="Call From Temple">Call From Temple</option>
+                        <option value="WhatsApp Message">WhatsApp Message</option>
+                        <option value="SMS">SMS</option>
+                    </select>
+                    <span id="cametoknow_error"></span>
+                </div>
+            </div>
+            <!-- sixth section end here -->
+            <!-- sevent section start here  -->
+            <div class="seventsection">
+                <div class="message">
+                    <label for="message">Message</label>
+                    <textarea name="message" placeholder="Enter Here" rows="8" style="height:auto;"></textarea>
+                    </textarea>
+                    <span id="message_error"></span>
+                </div>
+            </div>
+            <!-- seventh section end here  -->
+            <!-- submit button start here -->
+            <div class="submitButn">
+                <button type="submit">DONOT NOW</button>
+            </div>
+            <!-- submit button end here -->
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#addmorebtn').click(function () {
+                $('.MultipleRecord .duplicate-row:last-child').clone().appendTo('.MultipleRecord');
+            })
+
+            $(document).on('click', '.btn-remove', function () {
+                if ($('.MultipleRecord .duplicate-row').length > 1) {
+                    $(this).parents('.duplicate-row').remove()
+                }
+            })
+        })
+    </script>
+    <script src="./assets/js/secformValidation.js"></script>
+</body>
+
+</html>

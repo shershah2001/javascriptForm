@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *,
+      *::after,
+      *::before {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        font-size: 62.5%;
+        font-family: "Poppins", -apple-system, system-ui, BlinkMacSystemFont,
+          "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+      }
+      .video_autoplay{
+        position: relative;
+      }
+      video {
+        max-width: 20%;
+        min-width: 100%;
+        height: auto;
+      }
+      .upper_shadow {
+        background: linear-gradient(to bottom, transparent 0%, black 100%);
+      }
+      .below_shadow{
+        position: absolute;
+        bottom: 5rem;
+        bottom:0;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+      p {
+        font-size: 7rem;
+        text-align: center;
+        color: #ffffff98;
+        opacity: 0.1;
+        font-size:1.8rem;
+        font-weight: 800;
+        margin: 0;
+        line-height: 0;
+        opacity: 0;
+        transform:translateY(-10px);
+        transition:transform 0.5s ease-in-out;
+      }
+    
+    .activePara{
+      line-height: normal;
+      opacity: 1;
+      transform:translateY(0)
+    }
+
+/* Continue this pattern for the remaining p tags */
+
+
+    </style>
+  </head>
+
+  <body>
+    <div class="video_autoplay">
+      <div class="upper_shadow"></div>
+      <video autoplay muted loop>
+        <source src="../assets/img/autovideo/video.mp4" type="video/mp4" />
+      </video>
+      <div class="below_shadow">
+        <div class="text-wrapper">
+          <p class="video_info">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p class="video_info">iusto. Distinctio, obcaecati illum.</p>
+          <p class="video_info">Commodi labore hic velit magni corrupti porro?</p>
+          <p class="video_info">Esse quibusdam molestias rem nihil inventore adipisci?</p>
+          <p class="video_info_1">Eius odio aliquid voluptatem non</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      const paragraphs = document.querySelectorAll('.text-wrapper p');
+      let currentIndex = 0;
+
+      function activateParagraph(index) {
+          paragraphs.forEach((p, i) => {
+              if (i === index) {
+                  p.classList.add('activePara');
+              } else {
+                  p.classList.remove('activePara');
+              }
+          });
+
+          currentIndex = (index + 1) % paragraphs.length;
+          setTimeout(() => {
+              activateParagraph(currentIndex);
+          }, 1000); // Change the delay time as needed
+      }
+
+      activateParagraph(currentIndex);
+  </script>
+  </body>
+</html>
